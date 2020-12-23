@@ -29,6 +29,10 @@
 
 then copy the bot token from your discord app and paste it.
 
+4. If you are uploding your code online using git, create a `.gitignore` file then type `.env` inside the gitignore file
+
+then run `git init`.
+
 4. From the project's directory, run the following code in your terminal:
 
 ```
