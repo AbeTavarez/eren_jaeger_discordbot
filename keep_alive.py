@@ -1,6 +1,8 @@
 from flask import Flask
 from threading import Thread
 
+print('Server Starting...')
+
 app = Flask('')
 
 

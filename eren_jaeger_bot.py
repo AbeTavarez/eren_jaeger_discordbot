@@ -1,3 +1,4 @@
+from keep_alive import keep_alive
 import random
 import json
 import requests
@@ -6,7 +7,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-
+print("Initiating Bot 🤖 ")
 client = discord.Client()
 
 db = {}
@@ -101,5 +102,5 @@ async def on_message(msg):
             db["responding"] = False
             await msg.channel.send("Responding is off.")
 
-
+keep_alive()
 client.run(os.getenv('TOKEN'))
