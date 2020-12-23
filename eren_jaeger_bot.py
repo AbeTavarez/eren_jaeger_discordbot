@@ -5,7 +5,11 @@ import discord
 import os
 from dotenv import load_dotenv
 load_dotenv()
+
+
 client = discord.Client()
+
+db = {}
 
 words = ["sad", "depressed", "unhappy", "angry", "miserable", "depressing"]
 
@@ -20,7 +24,18 @@ def get_quote():  # Fetch data from api and parse it
     return(quote)
 
 
+def update_encouragements(encouraging_msg):
+
+    if "encouragments" in db.keys():
+        encouragements = db["encouragements"]
+        encouragements.append(encouraging_msg)
+        db["encouragements"] = encouragements
+    else:
+        db["encouragemets"] = [encouraging_msg]
+
+
 # * Events
+
 
 @client.event  # @event: as soon as the bot is ready
 async def on_ready():
