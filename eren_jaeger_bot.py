@@ -1,16 +1,17 @@
 import discord
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 
 client = discord.Client()
 
 
-@client.event  # @event : as soon as the bot is ready
+@client.event  # @event: as soon as the bot is ready
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
 
-@client.event
+@client.event  # @event: when a message is received
 async def on_message(msg):
     if msg.author == client.user:
         return
