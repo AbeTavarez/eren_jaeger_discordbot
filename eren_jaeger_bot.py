@@ -24,8 +24,7 @@ def get_quote():  # Fetch data from api and parse it
     return(quote)
 
 
-def update_encouragements(encouraging_msg):
-
+def update_encouragements(encouraging_msg):  # adds new encourgement
     if "encouragments" in db.keys():
         encouragements = db["encouragements"]
         encouragements.append(encouraging_msg)
@@ -33,6 +32,12 @@ def update_encouragements(encouraging_msg):
     else:
         db["encouragemets"] = [encouraging_msg]
 
+
+def delete_encouragement(index):  # deletes encouragement
+    encouragements = db["encouragemets"]
+    if len(encouragements) > index:
+        del encouragements[index]
+        db["encouragements"] = encouragements
 
 # * Events
 
