@@ -13,8 +13,8 @@ db = {}
 
 words = ["sad", "depressed", "unhappy", "angry", "miserable", "depressing"]
 
-starter_encoragements = ["Cheer Up!",
-                         "Hang in there", "You are a great person / bot!"]
+starter_encouragements = ["Cheer Up!",
+                          "Hang in there", "You are a great person/bot!"]
 
 
 def get_quote():  # Fetch data from api and parse it
@@ -25,16 +25,16 @@ def get_quote():  # Fetch data from api and parse it
 
 
 def update_encouragements(encouraging_msg):  # adds new encourgement
-    if "encouragments" in db.keys():
+    if "encouragements" in db.keys():
         encouragements = db["encouragements"]
         encouragements.append(encouraging_msg)
         db["encouragements"] = encouragements
     else:
-        db["encouragemets"] = [encouraging_msg]
+        db["encouragements"] = [encouraging_msg]
 
 
 def delete_encouragement(index):  # deletes encouragement
-    encouragements = db["encouragemets"]
+    encouragements = db["encouragements"]
     if len(encouragements) > index:
         del encouragements[index]
         db["encouragements"] = encouragements
@@ -56,7 +56,7 @@ async def on_message(msg):
         quote = get_quote()
         await msg.channel.send(quote)
 
-    options = starter_encoragements
+    options = starter_encouragements
     if "encouragements" in db.keys():
         options = options + db["encouragements"]
 
@@ -67,6 +67,14 @@ async def on_message(msg):
         encouraging_msg = msg.content.split("$new ", 1)[1]
         update_encouragements(encouraging_msg)
         await msg.channel.send("New encouraging message added!")
+
+    if msg.content.startswith("$del"):
+        encouragements = []
+        if "encouragements" in db.keys():
+            index = int(msg.content.split("$del", 1)[1])
+            delete_encouragement(index)
+            encouragements = db["encouragements"]
+        await msg.channel.send(encouragements)
 
 
 client.run(os.getenv('TOKEN'))
