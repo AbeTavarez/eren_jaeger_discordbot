@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-![eren](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tumbral.com%2Ftag%2FEren%2520gif&psig=AOvVaw3ClMLOm1EdNKL55cOfYUc1&ust=1608850459298000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNDe7JOZ5e0CFQAAAAAdAAAAABAz)
+![eren](https://res.cloudinary.com/abetavarez/image/upload/v1608764284/eren_transform_fka9eb.gif)
 
 ### Prerequisites
 
