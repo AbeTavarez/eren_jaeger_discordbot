@@ -2,6 +2,8 @@
 
 ## Getting Started
 
+![eren](https://res.cloudinary.com/abetavarez/image/upload/v1608764284/eren_transform_fka9eb.gif)
+
 ### Prerequisites
 
 - Python
