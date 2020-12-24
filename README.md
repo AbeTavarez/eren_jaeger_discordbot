@@ -15,19 +15,21 @@
 ### Bot Discord Commands
 
 `$new` :
-`$new my new quote` - creates new quote 
+`$new my new quote` - creates new quote
 
 ### Runing the program
 
 1. Fork repo.
 
-2. Open it inn your favorite editor.
+2. Open it in your favorite code editor.
 
 3. Create a `.env` file and copy and paste the following:
 
 `export TOKEN="paste_your_bot_token_here"`
 
-then copy the bot token from your discord app and paste it.
+then copy your bot's token from your discord app
+
+finally paste it inside the quotes of the `TOKEN` variable.
 
 4. If you are uploding your code online using git, create a `.gitignore` file then type `.env` inside the gitignore file
 
@@ -44,9 +46,8 @@ python3 eren_jaeger_bot.py
 ### Sample Code
 
 ```
-# Get directory size
+# Adds new quote to db
 
-# * Adds new quote to db
     if msg.content.startswith("$new"):
         new_quote = msg.content.split("$new ", 1)[1]
         update_quote_list(new_quote)
