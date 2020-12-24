@@ -5,6 +5,8 @@ print('Server Starting...')
 
 app = Flask('')
 
+# Routes
+
 
 @app.route('/')
 def home():
