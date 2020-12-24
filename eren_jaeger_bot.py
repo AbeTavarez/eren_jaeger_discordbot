@@ -22,6 +22,7 @@ if "responding" not in db.keys():
 
 
 ################ * Helper functions * ######################################
+################ * Helper functions * ######################################
 
 def get_quote():  # Fetch data from api and parse it
     res = requests.get("http://zenquotes.io/api/random")
