@@ -4,7 +4,7 @@ from threading import Thread
 print('Server Starting...')
 
 app = Flask('')
-
+port = 3000
 # Routes
 
 
